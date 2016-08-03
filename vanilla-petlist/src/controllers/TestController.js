@@ -7,9 +7,10 @@ class TestController {
     console.log('Controller');
     this.model = new TestModel();
     this.view = new TestView();
-
-
   }
+
+
+
 
 }
 
