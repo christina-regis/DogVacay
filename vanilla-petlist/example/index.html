@@ -1,15 +1,16 @@
 <!doctype html>
 <html>
   <head>
-  <script type = "text/javascript" src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <style>
-    #caps {
-      text-transform: capitalize;
-    }
-    #title {
-      color: Blue;
-      text-transform: capitalize;
-    }
+      #caps {
+        text-transform: capitalize;
+      }
+      #title {
+        color: Blue;
+        text-transform: capitalize;
+      }
     </style>
     <meta charset="utf-8">
     <title>Search</title>
@@ -20,28 +21,15 @@
     <div>
       <h3>What are you looking for?</h3>
     </div>
-    <input class="boarding" type="radio" name="options" value="boarding">Boarding
-    <input class="sitting" type="radio" name="options" value="sitting">Sitting
+    <form method="GET" action="static/search.json?">
+      <input class="boarding" type="radio" name="service" value="boarding"/>Boarding
+      <input class="sitting" type="radio" name="service" value="sitting"/>Sitting
+      <input class="both" type="radio"/>Boarding and Sitting
+      <input type="submit"/>
+    </form>
     <div id="petList"></div>
     <div id="content"></div>
     <!-- build:js -->
     <!-- endbuild -->
-    <script>
-    $(document).ready(function(){
-      // $(".sitting").click(function(event){
-        $.getJSON('http://localhost:3000/static/search.json', function(results){
-          var search = results.search;
-          for (var i = 0; i < search.length; i++) {
-            var lastName = search[i].user.last.slice(0,1);
-          $('#content').append('<p id="title">' + search[i].title + ' </p>');
-          $('#content').append('<p id="caps">' + search[i].user.first + ' ' + lastName + '.</p>');
-          $('#content').append('<p id="caps">' + search[i].pet.name + '</p>');
-          $('#content').append('<p>' + search[i].description + '</p>');
-          // console.log(results.search([i]));
-          }
-        });
-      // });
-    });
-    </script>
   </body>
 </html>
