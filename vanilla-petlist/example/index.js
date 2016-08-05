@@ -12,8 +12,7 @@ $(document).ready(function() {
       var lastName = search[i].user.last.slice(0,1);
       var urlLink = search[i].title.trim().replace(/\s/g, "-").replace("'","").replace("--","-");
       id ++;
-      console.log(urlLink);
-      $('#content').append('<p id="title"><a href="' + urlLink + '-' + id + '">' + search[i].title + '</a></p>');
+      $('#content').append('<p id="caps"><a href="' + urlLink + '-' + id + '">' + search[i].title + '</a></p>');
       $('#content').append('<p id="caps">' + search[i].user.first + ' ' + lastName + '.</p>');
       $('#content').append('<p id="caps">' + search[i].pet.name + '</p>');
       if(search[i].description.length > 48){

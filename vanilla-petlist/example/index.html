@@ -1,37 +1,40 @@
 <!doctype html>
 <html>
   <head>
-  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <style>
+      body {
+        background-color: #80ffff;
+      }
       #caps {
         text-transform: capitalize;
       }
-      #title {
-        text-transform: capitalize;
+      #search {
+        height: 650px;
+        width: 350px;
+        border: 1px solid black;
+        text-align: center;
+        margin: 0 auto;
+        background-color: #fff9e6;
       }
     </style>
     <meta charset="utf-8">
     <title>Search</title>
-    <!-- build:css -->
-    <!-- endbuild -->
   </head>
   <body>
-    <div>
-      <h3>What are you looking for?</h3>
+    <div id="search">
+      <h3>DogVacay Search</h3>
+      <form method="GET" action="static/search.json?">
+        <input type="radio" name="service" value="boarding"/>Boarding
+        <input type="radio" name="service" value="sitting"/>Sitting
+        <input type="submit"/>
+      </form>
+      <br>
+      <a href="http://localhost:3000/static/search.json">Boarding and Sitting</a>
+      <hr>
+      <br>
+      <div id="content"></div>
     </div>
-    <form method="GET" action="static/search.json?">
-      <input class="boarding" type="radio" name="service" value="boarding"/>Boarding
-      <input class="sitting" type="radio" name="service" value="sitting"/>Sitting
-      <input type="submit"/>
-    </form>
-    <br>
-    <a href="http://localhost:3000/static/search.json">Boarding and Sitting</a>
-    <hr>
-    <br>
-    <div id="petList"></div>
-    <div id="content"></div>
-    <!-- build:js -->
-    <!-- endbuild -->
   </body>
 </html>
