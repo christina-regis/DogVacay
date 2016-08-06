@@ -1,3 +1,25 @@
+#My Process
+I began this project by reading through the requirements a couple of times to make sure I understood what I needed to do. 
+
+###Starting
+I decided to start by adding a console log to the index.js page to make sure it was connected and working.  I tried to create a separate CSS page but found I was unable to as I got an error when I added the link tab.  I asked a fellow classmate and one of my instructors but they were not able to help me attach the page.  
+
+###Landing Page
+I created the radio buttons for sitting and boarding before starting on the javascript by creating an ajax call to pull the json data to the front. Once I could see the object in a console.log, I focused into each piece of data to make sure I could get to the desired information. 
+
+###Looping through Data
+For this piece, I created a for-loop and focused into each piece of data _ starting with the first name.  I found that I could simply use the text-transform, capitialize attribute to capitalize the first letter and then appended the field in the html to the content id. Next, I worked on the last name by slicing the last name string after the first letter and adding a . before adding it to the first name.  I then moved onto the pet name. 
+
+###Back to the form
+I worked on the form using the radio buttons to route to the boarding and sitting json data depending on which button was selected.  I noticed in the url that it was static/search.json/?service and then the search parameters, so I made the "get" of the form static/search.json?, named both parameters "service," and set the values to "boarding" or "sitting" respectively.  I then set my href for just the .json data since I realized that I would need to give both radio buttons the same name so as to ensure that only one button could be selected at a time.   
+
+###Back to Looping through data
+As I finally jumped into what I believed to be the most complex aspect of this project, I started by going back to the ajax call and working on the description field.  To do this, I first checked if the description string length was less than the max 48 characters.  If this was true, I simply appended it to the html.  If the string was longer, I cut the string at 48 then created another for loop to loop backwards through the cut string looking for a space.  When a space was found, I cut the string and added the elipses before appending it in the html.  I realized early-on that the loop I created did not stop cutting at the first space, so I added a counter requirement to the loop that counted each loop to ensure that it only cut at the first space.  My next step was to work on adding a hyperlink to each title.  I started by console logging the title, then took out the spaces and added dashes.  I found that one of the titles had a space at the beginning, so I trimmed the string and eliminated the apostrophe.  As I began to wrap up, I created a counter to simulate an id for each posting.  Finally, I added the newly formatted title to the title tag as a hyperlink.  
+
+###Stying
+After finishing the code, I did one final test to make sure everything was working as expected, which also included making sure I looked back through the code to see if it was easily readable and as simplified as possible. Lastly, I added some CSS to make it a little more presentable, knowing that I did not want to do too much since I was working in the html file.  If I could have managed to attach a separate CSS page, I would have not only added my CSS into that file but I likely also would have added more robust styling to the project.
+
+
 # PetList Test
 > These are a few modules of the 'Search Page' on our site.  
 To view how the search page acts go to https://dogvacay.com/browse
